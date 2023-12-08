@@ -1,9 +1,7 @@
 pkgs @ { pypkgs, ... }:
 
 let
-  pip = import ../../pip {
-    inherit pkgs pypkgs;
-  };
+  pip = pypkgs.pip;
 
   config-cache-enabled = pkgs.writeTextFile {
     name = "pip.conf";
